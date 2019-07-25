@@ -11,6 +11,17 @@ for($index=0; $index < sizeof($colors); $index++){
     echo $colors[$index]." ";
 }
 
+echo "<br>";
+//foreach
+foreach($colors as $key => $color){
+    echo "編號".$key."是".$color."<br>";
+}
 
-
+//關聯陣列 自訂索引 用foreach
+$products = array("iphone6"=>22500,
+                  "iphone7"=>24500,
+                  "iphone8"=>26500);
+foreach($products as $iphone => $price){
+    echo $iphone."售價是".$price."元<br>";
+}
 ?>
