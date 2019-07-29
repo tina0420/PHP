@@ -38,4 +38,61 @@ echo "<br>";
 //陣列內容轉為字串
 echo implode(",",getDiscountPrice($oriPrices));
 
+echo "<br>";
+//練習1  計算出任意一組數字陣列中，共有幾個不重複的數字
+$numbers = array(2,2,3,4,4,5,10,33,33,1,56,67);
+function countDistinct($input){
+    $result = array();  //初始預設一個陣列
+    foreach($input as $value){
+        //如果當下的數字值"還沒在"$result裡面，就放進去
+        //用in_array看裡面有沒有 in_aray -> false
+        //if(true) -> {}
+        //false ->true 用! (邏輯運算子)
+        if(!in_array($value,$result)){
+            array_push($result,$value);
+            //in_array
+            //array_push
+        }
+    }
+    return count($result)."個不重複數字";
+ }
+ echo countDistinct($numbers);
+ 
+
+
+//練習2 practice by myself
+// function getMaxMin($input){
+//     for($n=0; $n<count($numbers)-1; $n++){
+//         if($numbers[$n]>$numbers[$n+1]){
+//             tmp = $numbers[$n];
+//             $numbers[$n] = $numbers[$n+1];
+//             $numbers[$n+1] = tmp;
+//         }
+//     }
+//     $max = $numbers[count($numbers)-1];
+//     $min = $numbers[0];
+//     return "最大值:".$max."最小值:".$min;
+//  }
+//  echo getMaxMin($numbers);
+ 
+
+ //練習2 teacher's code  
+ //取得任意一組數字陣列中的最大值與最小值
+ function getMaxMin($input){
+    $max = $input[0];
+    $min = $input[0];
+    //檢查流程     value為位置上的值
+    foreach($input as $value){
+        if($value > $max){
+            $max = $value;
+        }
+        if($value < $min){
+            $min = $value;
+        }
+    }
+    return "最大值:".$max."最小值:".$min;
+ }
+ echo getMaxMin($numbers);
+ 
+
 ?>
