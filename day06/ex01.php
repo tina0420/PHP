@@ -52,5 +52,28 @@ $randomString = implode(" ", $randomString);
 echo $randomString;
 echo "<br>";
 
+//從指定範圍取得一個數字
+echo rand(0,9);
+echo "<br>";
 
+//練習
+//統計骰子機率
+$times = 1000;
+$result = array("1" => 0,"2" => 0,"3" => 0,
+                "4" => 0,"5" => 0,"6" => 0);
+
+                //array_fill() -> $result = array_fill(1,6,0);
+                //建立1到6的key，裡面的值都放0
+//for迴圈跑1000次
+for($i = 0; $i < $times; $i++){
+    $randomNumber = rand(1,6);
+    $result[$randomNumber]++; //計算出現幾次
+}
+//印出統計用的result
+foreach($result as $key => $value){
+    //機率
+    $rate = ($value / $times)*100;
+    echo "擲到".$key."的次數為".$value."。"."機率為".$rate."%<br>";
+
+}
 ?>
