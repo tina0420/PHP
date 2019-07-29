@@ -61,24 +61,24 @@ function countDistinct($input){
 
 
 //練習2 practice by myself
-// function getMaxMin($input){
-//     for($n=0; $n<count($numbers)-1; $n++){
-//         if($numbers[$n]>$numbers[$n+1]){
-//             tmp = $numbers[$n];
-//             $numbers[$n] = $numbers[$n+1];
-//             $numbers[$n+1] = tmp;
-//         }
-//     }
-//     $max = $numbers[count($numbers)-1];
-//     $min = $numbers[0];
-//     return "最大值:".$max."最小值:".$min;
-//  }
-//  echo getMaxMin($numbers);
+ function getMaxMin($numbers){
+     for($n=0; $n<count($numbers)-1; $n++){
+         if($numbers[$n]>$numbers[$n+1]){
+             $tmp = $numbers[$n];
+             $numbers[$n] = $numbers[$n+1];
+             $numbers[$n+1] = $tmp;
+         }
+     }
+     $max = $numbers[count($numbers)-1];
+     $min = $numbers[0];
+     return "最大值:".$max."最小值:".$min;
+  }
+  echo getMaxMin($numbers);
  
 
  //練習2 teacher's code  
  //取得任意一組數字陣列中的最大值與最小值
- function getMaxMin($input){
+ function getMaxMin2($input){
     $max = $input[0];
     $min = $input[0];
     //檢查流程     value為位置上的值
